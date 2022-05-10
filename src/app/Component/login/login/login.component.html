@@ -1,0 +1,52 @@
+<div fxLayoutAlign="center center" style="background-color:White" fxFlexFill>
+
+   <div fxLayoutAlign="center center" style="background-color:White" fxFlexFill>
+
+      <mat-card fxFlex="30">
+         <h1 fxLayoutAlign="center center">
+            <span style="color: blue;">F</span>
+            <span style="color: red;">u</span>
+            <span style="color: orange;">n</span>
+            <span style="color: blue;">d</span>
+            <span style="color: green;">o</span>
+            <span style="color: red;">o</span>
+         </h1>
+         <p class="Signin" fxLayoutAlign="center center" color="primary">Sign in</p>
+         <p fxLayoutAlign="center center" class="Head">Use your Google Account</p>
+         <div>
+            <form [formGroup]="LoginForm" (ngSubmit)="OnSubmit()">
+         
+                  <div style="text-align:center;">
+                     <mat-form-field class="Email" appearance="outline" width="500mv">
+                        <mat-label>Email or Phone</mat-label>
+                        <input matInput placeholder="Email" formControlName="email">
+                        <mat-error>Enter valid Email id</mat-error>
+                     </mat-form-field>
+                     <button mat-button class="ForgotButton" routerLink="/ForgotPassword">Forgot email?</button>
+                  </div>
+                  <div style="text-align:center;">
+                     <mat-form-field class="Password" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Password" formControlName="password">
+                        <mat-error>Enter valid password</mat-error>
+                     </mat-form-field>
+                  </div>
+                  <div>
+                     <p class="Para">Not your computer? Use Guest mode to sign in privately.</p>
+                  </div>
+                  <div>
+                     <p class="LearnMore">Learn more</p>
+                  </div>
+                  <div fxLayoutAlign="space-between center">
+                     <button mat-button class="CreateAccount" routerLink="/register">Create account</button>
+                     <button mat-button class="Next">Next</button>
+                  </div>
+               
+            </form>
+         </div>
+
+      </mat-card>
+
+   </div>
+
+</div>

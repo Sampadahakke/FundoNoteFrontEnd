@@ -1,0 +1,80 @@
+<div class="Main" fxLayout="row" fxLayoutAlign="center center">
+    <div class="Border">
+        <div fxLayout="column" fxLayoutAlign="space-evenly center" >
+            <div class="Google">
+                <h1>
+                    <span style="color: blue;">G</span>
+                    <span style="color: red;">o</span>
+                    <span style="color: orange;">o</span>
+                    <span style="color: blue;">g</span>
+                    <span style="color: green;">l</span>
+                    <span style="color: red;">e</span>
+                </h1>
+            </div>
+            <p class="Heading">Create your Google Account</p>
+
+            <div >
+                <FORM [formGroup]="RegistrationForm"(ngSubmit)="OnSubmit()">
+                    <div class="Margin" fxLayout="row" fxLayoutGap="10px">
+                        <mat-form-field appearance="outline">
+                            <mat-label>First name</mat-label>
+                            <input matInput placeholder="First name" formControlName="firstName">
+                            <mat-error>Enter valid first name</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Last name</mat-label>
+                            <input matInput placeholder="Last name" formControlName="lastName">
+                            <mat-error>Enter valid first name</mat-error>
+                        </mat-form-field>
+
+                    </div>
+                    <div  class="address">
+                        <mat-form-field appearance="outline" [style.width.%]="85">
+                            <mat-label>Address</mat-label>
+                            <input matInput placeholder="Address" formControlName="address">
+                            <mat-error>Enter address</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="emailpass">
+                        <mat-form-field appearance="outline" [style.width.%]="85">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email" formControlName="email">
+                            <mat-error>Enter valid email</mat-error>
+                            <mat-hint class="IN">You can use letters,numbers & periods</mat-hint>
+                        </mat-form-field>
+
+                    </div>
+                    <p class="Info">Use my current email address instead</p>
+                    <div Class="Password" fxLayout="row" fxLayoutGap="10px">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input matInput placeholder="Password" formControlName="password" >
+                            <mat-error>Enter valid password</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Confirm</mat-label>
+                            <input matInput placeholder="Confirm" formControlName="Confirm" >
+                            <mat-error>Enter valid password</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <p class="Hint">Use 8 or more characters with a mix of letters, numbers &
+                        symbols
+                    </p>
+                    <div class="Checkbox">
+                        <input type="checkbox" id="icon">Show password
+                    </div>
+
+                    <div class="Buttons" fxLayoutAlign="space-between center">
+                        <button mat-button class="Signininstead" routerLink="/login">Sign in instead</button>
+                        <button mat-raised-button class="Next">Next</button>
+                    </div>
+                </FORM>
+            </div>
+        </div>
+        <div class="Image">
+            <img style="width:300px; height:300px" src="../../../assets/account.svg">
+            <mat-hint>One account. All of Fundoo</mat-hint>
+            <mat-hint> Working for you</mat-hint>
+        </div>
+    </div>
+</div>

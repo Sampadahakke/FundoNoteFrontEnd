@@ -1,0 +1,116 @@
+.Main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.Heading{
+    color:black ;
+    font-size:20px ;
+    margin-bottom: 15px;
+    
+}
+.register-xs
+{
+   width: 100%;
+}
+  
+.IN{
+    font-size: 11px;
+    margin-top: 0px;
+}
+.Info{
+    color:blue ;
+    font-size:15px ;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    
+}
+.emailpass{
+    margin-top: 10px;
+}
+.address{
+    margin-top: 10px;
+
+}
+.Hint{
+    font-size:12px ;
+    font-weight: 10px;
+}
+.ShowPassword{
+    box-sizing: border-box;
+    color: adjust-hue($color: #000000, $degrees: 0);
+}
+.Image{
+
+    width: 80%;
+    height:55%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+
+    font-size: medium;
+    align-items:center;
+    
+}
+.Margin{
+    margin-bottom: -10px;
+}
+.Next
+{
+  border: 0px;
+  color: white;
+  background-color: blue;
+  height:40px;width: 60px;
+  margin: 30px;
+}
+.Signininstead
+{
+  padding-left: 31px;
+  border: 0px;
+  color: blue;
+  font-size: medium;
+  background-color: transparent;
+}
+.Border{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid gray;
+    width: 55%;
+    margin-top: 40px;
+    margin-left:100px ;
+    //margin: 30px 100px 25px;
+    justify-content: center;
+    //align-content: center;
+    align-items: center;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: 70%;
+    margin-bottom: 40%;
+    border-radius: 20px;
+}
+.Password{
+    margin-top: 10px;
+}
+.Buttons{
+    display: flex;
+    gap: 5px 180px;
+    width: 490px;
+    color: blue;
+    margin-top: 60px;
+    margin-bottom:-20px;
+}
+
+
+.Google{
+    justify-content:left;
+    //align-content: center;
+    align-items:left;
+    
+}
+.Checkbox{
+    padding-top: 20px;
+    font-size: medium;
+}
