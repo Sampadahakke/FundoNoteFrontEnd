@@ -38,5 +38,16 @@ export class UserServiceService {
     }
     return this.httpservice.postService(this.base+`User/ForgetPassword/${data.email}`, {} ,false,header)
   }
+
+  ResetPassword(data:any,token:any){
+    console.log(data)
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type': 'application/json-patch+json',
+        'Authorization':'Bearer '+token
+      })
+    }
+    return this.httpservice.putService(this.base+`User/ChangePassword/${data.newPassword}/${data.confirmPassword}`, {} ,false,header)
+  }
 }
  

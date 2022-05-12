@@ -1,0 +1,65 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar class="example-toolbar">
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <img src="	https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png
+      " style="width:40px; height:40px" class="Image">
+        <h1 class="example-app-name">Fundoo</h1>
+        <mat-form-field class="search" appearance="outline" fxHide fxShow.gt-xs>
+            <input matInput class="search" type="search" placeholder="Search...">
+            <span mat-icon-button matPrefix><img src="../../../assets/search_FILL0_wght400_GRAD0_opsz48 (1).svg"></span>
+            <span mat-icon-button matSuffix type="button" style="visibility: hidden;"><img
+                    src="assets/search_FILL0_wght400_GRAD0_opsz48.svg"></span>
+        </mat-form-field>
+        <button mat-icon-button style="width: 50px ;">
+            <div  fxLayout="row" fxLayoutAlign="space-around center" >
+                <mat-icon class="refresh">refresh</mat-icon>
+                <mat-icon class="refresh">list</mat-icon>
+            </div>
+
+
+        </button>
+    </mat-toolbar>
+
+    <mat-sidenav-container style="border: 2px solid red; height:400px" class="example-sidenav-container"
+        [style.marginTop.px]="mobileQuery.matches ? 100 : 0">
+        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+            fixedTopGap="100">
+            <mat-nav-list class="mat-nav-list">
+                <a mat-list-item class="Notes">
+                    <img class="note" src="../../../assets/notes.svg">
+                    Notes
+
+                </a>
+                <a mat-list-item class="Reminders">
+                    <img class="reminder" src="../../../assets/notifications_FILL0_wght400_GRAD0_opsz48.svg">
+                    Reminders
+
+                </a>
+                <a mat-list-item class="Labels">
+                    <img class="label" src="../../../assets/label_FILL0_wght400_GRAD0_opsz48.svg">
+                    Labels
+
+                </a>
+                <a mat-list-item class="Editlabel">
+                    <img class="Edit" src="../../../assets/edit_FILL0_wght400_GRAD0_opsz48.svg">
+                    Edit labels
+                </a>
+                <a mat-list-item class="Archive">
+                    <img class="archive" src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg">
+                    Archive
+                </a>
+                <a mat-list-item class="Bin">
+                    <img class="bin" src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.svg">
+                    Bin
+                </a>
+
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <p>This is the body</p>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

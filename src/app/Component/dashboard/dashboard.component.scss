@@ -1,0 +1,97 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+.Edit{
+    width: 30px;
+    margin-right: 20px;
+}
+.reminder{
+    width: 30px;
+    margin-right: 20px;
+}
+.note{
+    width: 30px;
+    margin-right: 20px;
+}
+.label{
+    width: 30px;
+    margin-right: 20px;
+}
+.archive{
+    width: 30px;
+    margin-right: 20px;
+}
+.bin{
+    width: 30px;
+    margin-right: 20px;
+}
+.mat-nav-list a:hover{
+    background-color: rgb(247, 233, 217) ;
+    
+}
+.Notes{
+    font-size: 15px;  
+}
+.Labels{
+    font-size: 15px;  
+}
+.Editlabel{
+    font-size: 15px;  
+}
+.Reminders{
+    font-size: 15px;  
+}
+.Archive{
+    font-size: 15px;  
+}
+.Bin{
+    font-size: 15px;  
+}
+.example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  .search{
+    width:800px;
+    margin-left: 8%;
+    margin-right: 8%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+    font-size: 16px;
+    
+  }
+
+  .Image{
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+  
+  .example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+  }
+  
+  h1.example-app-name {
+    margin-left: 2px;
+  }
+  
+  .example-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+  }
+  
+  .example-is-mobile .example-sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+  }
+  

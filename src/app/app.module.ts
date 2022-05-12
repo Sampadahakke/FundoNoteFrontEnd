@@ -17,6 +17,14 @@ import { ResetPasswordComponent } from './ResetPassword/reset-password/reset-pas
 import{ReactiveFormsModule} from '@angular/forms';
 import{FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './Component/dashboard/dashboard.component';
+import { TakeNoteComponent } from './Component/take-note/take-note.component';
+import { IconsComponent } from './Component/icons/icons.component';
+import { GetAllNotesComponent } from './Component/get-all-notes/get-all-notes.component';
+import { DisplayComponent } from './Component/display/display.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -27,7 +35,12 @@ import { HttpClientModule } from '@angular/common/http';
     RegistrationComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    DashboardComponent,
+    TakeNoteComponent,
+    IconsComponent,
+    GetAllNotesComponent,
+    DisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +55,9 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule
     
   ],
   providers: [],
