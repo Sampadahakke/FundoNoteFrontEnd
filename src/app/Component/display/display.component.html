@@ -1,1 +1,11 @@
-<p>display works!</p>
+<div style="border: 1px solid grey; margin: 5px;" *ngFor="let note of recievedNoteList">
+    <p>
+        {{note.Title}}
+    </p>
+    <p>
+        {{note.Description}}
+    </p>
+    <p>
+        {{note.data}}
+    </p>
+</div>

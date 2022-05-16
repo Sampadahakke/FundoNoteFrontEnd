@@ -1,1 +1,58 @@
-<p>take-note works!</p>
+<!-- <div class="border"  style="width:30%;   border: 2px solid grey; margin:5px; border-radius: 10px;" >
+    <div *ngIf="!isShow">
+        <input  placeholder="Title">
+    </div>
+    <div *ngIf="!isShow || isShow" (Click)="Show()">
+        <input placeholder="Take a note...">
+    </div>
+    <div *ngIf="!isShow" fxLayout="row" fxLayoutAlign="space-between center">
+        <app-icons></app-icons>
+        <button (Click)="close()">Close</button>
+    </div>
+    
+</div> -->
+<mat-card class="takeNote">
+    <div *ngIf="isShow" fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-card-title > <input class="Title"  matInput style="width: 300px; height: 20px;" placeholder="Title" [(ngModel)]="Title"> </mat-card-title>
+        <button mat-icon-button > <img style="width: 25px; height:25px;" src="../../../assets/pin.svg" width="px"
+            height="30px"></button>
+    </div>
+    <div *ngIf="!isShow || isShow" (click)="Show()">
+        <input (Click)="Show()" class="TakeNote" matInput style="width: 300px; height: 20px;" placeholder="Take a note..." [(ngModel)]="Description">
+    </div>
+    <div *ngIf="isShow" fxLayout="row" fxLayoutAlign="space-between center">
+        <app-icons></app-icons>
+        <button mat-button (click)="close()">Close</button>
+    </div>
+</mat-card>
+
+<!-- <div class="takeNote" fxLayout="column" fxLayoutAlign="space-between center">
+    <div class="note" style="border:2px solid rgb(227,222,222); width:40%">
+        <div *ngIf="isShow">
+            <input class="title" style="width:99% " placeholder="Title">
+        </div>
+        <div *ngIf="!isShow || isShow" (Click)="Show()">
+            <input class="takenote" style="width:99% ;" placeholder="Take a note...">
+        </div>
+        <div class="flex" *ngIf="isShow" fxLayout="row">
+            <div class="flex">
+                <app-icons></app-icons>
+                <button class="close" (click)="close()">Close</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div>
+    <div *ngIf="isShow">
+       <input placeholder="Title">
+    </div>
+    <div *ngIf="!isShow || isShow" (click)="Show()" style="border: 1px solid grey;">
+       <input placeholder="Note">
+          
+    </div>
+    <div *ngIf="isShow">
+          <button>Next</button>  
+    </div>
+</div> -->
+
