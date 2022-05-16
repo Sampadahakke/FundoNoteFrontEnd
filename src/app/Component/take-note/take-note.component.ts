@@ -22,8 +22,13 @@ export class TakeNoteComponent implements OnInit {
   this.isShow=false;
    console.log(this.Title,this.Description)
    let data={
-     Title:this.Title,
-     Description:this.Description
+    "title": this.Title,
+  "description": this.Description,
+  "bgColor": " ",
+  "isArchive": false,
+  "isReminder": false,
+  "isPin": false,
+  "isTrash":false
    }
    this.note.addNote(data).subscribe((res:any)=>{console.log(res);})
  }

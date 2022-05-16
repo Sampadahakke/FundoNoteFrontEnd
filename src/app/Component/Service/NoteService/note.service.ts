@@ -12,14 +12,16 @@ export class NoteService {
     this.token=localStorage.getItem('token');
   }
   addNote(data:any){
-    console.log(data)
+    
+    console.log(data,this.token)
+    
     let header={
       headers:new HttpHeaders({
         'Content-Type': 'application/json-patch+json',
-        'Authorization': this.token,
+        'Authorization': 'Bearer '+this.token 
       })
     }
-    return this.httpservice.postService(this.base+'Note/AddNote', {} ,true,header)
+    return this.httpservice.postService(this.base+'Note/AddNote', data ,true,header)
   }
 
   getNote(){
@@ -27,7 +29,7 @@ export class NoteService {
     let header={
       headers:new HttpHeaders({
         'Content-Type': 'application/json-patch+json',
-        'Authorization': this.token,
+        'Authorization': 'Bearer '+this.token 
       })
     }
     return this.httpservice.getService(this.base+'Note/GetAllNotes',true,header)
