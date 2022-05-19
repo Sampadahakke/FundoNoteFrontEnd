@@ -17,6 +17,24 @@ noteList:any;
     this.note.getNote().subscribe((response:any)=>{
       console.log(response);
       this.noteList=response.data;
+      this.noteList = this.noteList.filter((object:any)=>{
+        return object.isArchive===false && object.isTrash===false
+      })
     }
   )}
+  receiveMessage(event:any){
+    this.GetAllNotes();
+  }
+  updateMessage(event:any){
+    this.GetAllNotes();
+  }
+  archiveMessage(event:any){
+    this.GetAllNotes();
+  }
+  deleteMessage(event:any){
+    this.GetAllNotes();
+  }
+  // trashMessage(event:any){
+  //   this.GetAllNotes();
+  // }
 }

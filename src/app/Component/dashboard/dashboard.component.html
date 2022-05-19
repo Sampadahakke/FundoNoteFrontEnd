@@ -44,7 +44,7 @@
         <mat-sidenav style="width:250px;"  #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
             fixedTopGap="100">
             <mat-nav-list class="mat-nav-list">
-                <a mat-list-item class="Notes">
+                <a mat-list-item class="Notes" routerLink="notes">
                     <img class="note" src="../../../assets/notes.svg">
                     Notes
                 </a>
@@ -60,13 +60,13 @@
                     <img class="Edit" src="../../../assets/edit_FILL0_wght400_GRAD0_opsz48.svg">
                     Edit labels
                 </a>
-                <a mat-list-item class="Archive">
-                    <img class="archive" src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg">
+                <a mat-list-item class="Archive" routerLink="archieve" >
+                    <img class="archive" src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg" >
                     Archive
                 </a>
-                <a mat-list-item class="Bin">
+                <a mat-list-item class="Bin" routerLink="trash">
                     <img class="bin" src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.svg">
-                    Bin
+                    Trash
                 </a>
 
             </mat-nav-list>

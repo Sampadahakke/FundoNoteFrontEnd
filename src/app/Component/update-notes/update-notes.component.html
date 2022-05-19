@@ -1,0 +1,22 @@
+<!-- <div class="displayNote ">
+  
+        <div class="Title">
+          
+        </div>
+        <div class="icons">
+            <app-icons></app-icons>
+        </div>
+  
+</div> -->
+<div class="note">
+
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <input class="mat-title" placeholder="Title" matInput mat-dialog-title [(ngModel)]="title"  >
+    </div>
+  
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <input class="mat-title" placeholder="Description" matInput mat-dialog-title  [(ngModel)]="description">
+    </div>
+    <app-icons></app-icons>
+   <button class="button" (click)="onNoClick()">Close</button>
+  </div>

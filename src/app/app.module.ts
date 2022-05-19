@@ -12,10 +12,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
 
+import{ FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-import{ ReactiveFormsModule} from '@angular/forms';
-import{FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import { TakeNoteComponent } from './Component/take-note/take-note.component';
@@ -27,6 +27,13 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { ForgotPasswordComponent } from './Component/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './Component/reset-password/reset-password.component';
+import { UpdateNotesComponent } from './Component/update-notes/update-notes.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ArchieveComponent } from './Component/archieve/archieve.component';
+import { TrashComponent } from './Component/trash/trash.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
 
 
 
@@ -42,7 +49,11 @@ import { ResetPasswordComponent } from './Component/reset-password/reset-passwor
     TakeNoteComponent,
     IconsComponent,
     GetAllNotesComponent,
-    DisplayComponent
+    DisplayComponent,
+    UpdateNotesComponent,
+    ArchieveComponent,
+    TrashComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -60,10 +71,13 @@ import { ResetPasswordComponent } from './Component/reset-password/reset-passwor
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-    
+    MatDialogModule,
+    MatMenuModule,
+    MatSnackBarModule
     
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

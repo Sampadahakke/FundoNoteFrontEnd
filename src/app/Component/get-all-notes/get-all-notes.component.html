@@ -1,3 +1,5 @@
-<app-take-note></app-take-note>
-<app-display [recievedNoteList]="noteList"></app-display>
+<app-take-note (messageEvent)="receiveMessage($event)"></app-take-note>
+<app-display [recievedNoteList]="noteList" (updateEvent)="receiveMessage($event)" (archiveEvent)="archiveMessage($event)" (deleteEvent)="deleteMessage($event)"></app-display>
+
+
 

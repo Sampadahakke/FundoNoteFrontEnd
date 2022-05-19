@@ -1,11 +1,22 @@
-<div style="border: 1px solid grey; height: 50px; margin: 5px;" *ngFor="let note of recievedNoteList">
-    <p>
-        {{note.title}}
-    </p>
-    <p>
-        {{note.description}}
-    </p>
-    <p>
-        {{note.data}}
-    </p>
+<!-- <mat-card>
+    <div style="width: 30px; height:30px" *ngFor="let note of recievedNoteList">
+        <p>{{note.title}}</p>
+        <p>{{note.description}}</p>
+        <p>{{note.data}}</p>
+    </div>
+    
+</mat-card> -->
+<div class="displayNote ">
+    <mat-card class="note" *ngFor="let note of recievedNoteList">
+        <div class="Title">
+            <p (click)="openDialog(note)">{{note.title}}</p>
+            <p (click)="openDialog(note)">{{note.description}}</p>
+            <p>{{note.token}}</p>
+
+        </div>
+        <div class="icons">
+            <app-icons [notedata]="note" (archiveEvent)="archiveMessage($event)" (deleteEvent)="deleteMessage($event)"></app-icons>
+        </div>
+     
+    </mat-card>
 </div>

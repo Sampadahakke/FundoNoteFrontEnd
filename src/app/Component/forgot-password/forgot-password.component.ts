@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{FormGroup,FormBuilder, Validators} from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserServiceService } from 'src/app/Component/Service/UserService/user-service.service';
 
 
@@ -14,7 +15,7 @@ export class ForgotPasswordComponent implements OnInit {
  ForgotPasswordForm!:FormGroup;
  submitted=false;
  
-  constructor(private formBuilder: FormBuilder,private user:UserServiceService) { }
+  constructor(private formBuilder: FormBuilder,private user:UserServiceService,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.ForgotPasswordForm=this.formBuilder.group({
@@ -29,7 +30,12 @@ export class ForgotPasswordComponent implements OnInit {
       let data={
         email:this.ForgotPasswordForm.value.email,
       }
-      this.user.ForgotPassword(data).subscribe((res:any)=>{console.log('Reset link sent successfully',res);})
+      this.user.ForgotPassword(data).subscribe((res:any)=>{console.log('Reset link sent successfully',res);
+      this._snackBar.open('Mail sent successfully..', '', {
+        duration: 3000,
+        verticalPosition: 'bottom'
+      })
+    })
     }
     else
     {
