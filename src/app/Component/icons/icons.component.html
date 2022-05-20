@@ -3,10 +3,13 @@
     <button mat-icon-button matTooltip="Collaborator"> <img src="../../../assets/Icons/Collaborator.svg" width="20px" height="20px"></button>
     <button mat-icon-button matTooltip="Background color" > <img src="../../../assets/Icons/Background.svg" width="20px" height="20px"></button>
     <button mat-icon-button matTooltip="Collaborator" > <img src="../../../assets/Icons/Add image.svg" width="20px" height="20px"></button>
-    <button mat-icon-button matTooltip="Collaborator"(click)="archieve()"> <img src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg" width="20px" height="20px"></button>
-    <button mat-button [matMenuTriggerFor]="menu"><img src="../../../assets/Icons/More.svg" width="20px" height="20px"></button>
+    <button class="archive" mat-icon-button matTooltip="Archive"(click)="archieve(notedata)" *ngIf="!isArchive && !isTrash"> <img src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg" width="20px" height="20px"></button>
+    <button mat-icon-button matTooltip="Unarchive" (click)="archieve(notedata);" *ngIf="isArchive && !isTrash"> <img src="../../../assets/Icons/unarchive_black_24dp.svg" width="20px" height="20px"></button>
+    <button mat-icon-button matTooltip="Delete Forever" (click)="delete()" *ngIf="isTrash"> <img src="../../../assets/Icons/delete_forever_black_24dp.svg" width="20px" height="20px"></button>
+    <button mat-icon-button matTooltip="Restore" (click)="trash(notedata)" *ngIf="isTrash"> <img src="../../../assets/Icons/restore_from_trash_black_24dp.svg" width="20px" height="20px"></button>
+    <button class="more" mat-button [matMenuTriggerFor]="menu" *ngIf="!isTrash"><img src="../../../assets/Icons/More.svg" width="20px" height="20px"></button>
      <mat-menu #menu="matMenu">
-     <button mat-menu-item (click)="delete()">Delete note</button>
+     <button mat-menu-item (click)="trash(notedata)">Delete note</button>
      <button mat-menu-item>Change labels</button>
      <button mat-menu-item>Add drawing</button>
      <button mat-menu-item>Make a copy</button>

@@ -7,15 +7,15 @@
     
 </mat-card> -->
 <div class="displayNote ">
-    <mat-card class="note" *ngFor="let note of recievedNoteList">
+    <mat-card class="note" *ngFor="let note of recievedNoteList" class="note">
         <div class="Title">
             <p (click)="openDialog(note)">{{note.title}}</p>
             <p (click)="openDialog(note)">{{note.description}}</p>
             <p>{{note.token}}</p>
 
         </div>
-        <div class="icons">
-            <app-icons [notedata]="note" (archiveEvent)="archiveMessage($event)" (deleteEvent)="deleteMessage($event)"></app-icons>
+        <div >
+            <app-icons class="icons" [notedata]="note" (deleteEvent)="deleteMessage($event)" (archiveEvent)="archiveMessage($event)" (trashEvent)="trashMessage($event)"></app-icons>
         </div>
      
     </mat-card>

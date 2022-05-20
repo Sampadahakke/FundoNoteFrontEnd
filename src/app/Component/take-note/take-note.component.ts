@@ -39,14 +39,15 @@ export class TakeNoteComponent implements OnInit {
           duration: 3000,
           verticalPosition: 'bottom'
         })
+      }, error=>this._snackBar.open('Both Title and Description should not be empty', '', {
+        duration: 3000,
+        verticalPosition: 'bottom'
       })
-    } 
+      )
+    }
     else {
       console.log("Both Title and Description should not be null or empty");
-      this._snackBar.open('Both Title and Description should not be empty', '', {
-        duration: 3000,
-        verticalPosition: 'bottom'    
-      })
+      
     }
 
   }

@@ -15,7 +15,9 @@ export class DisplayComponent implements OnInit {
 @Input()recievedNoteList:any;
 @Output() updateEvent = new EventEmitter<string>();
 @Output() archiveEvent = new EventEmitter<string>();
+@Output() trashEvent = new EventEmitter<string>();
 @Output() deleteEvent = new EventEmitter<string>();
+
 
 // @Output() trashEvent = new EventEmitter<string>();
 
@@ -34,16 +36,16 @@ export class DisplayComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed',result);
-      this.updateEvent.emit("Hello")
-     
-      
-      
+      this.updateEvent.emit("Hello")  
     });  
 
    
   }
   archiveMessage(event:any){
     this.archiveEvent.emit("Hello")
+  }
+  trashMessage(event:any){
+    this.trashEvent.emit("Hello")
   }
   deleteMessage(event:any){
     this.deleteEvent.emit("Hello")

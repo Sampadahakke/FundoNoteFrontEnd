@@ -22,5 +22,8 @@ noteList:any;
       })
     }
   )}
-  
+  archiveMessage(event:any){
+    this.GetAllNotes();
+  }
+ 
 }

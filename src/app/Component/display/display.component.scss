@@ -1,7 +1,7 @@
 .note{
     margin-top: 20px;
     margin-bottom: 20px;
-    width: 250px;
+    width: 280px;
     margin-left: 20px;
 }
 
@@ -16,3 +16,6 @@
     flex-wrap: wrap;
     justify-content: flex-start;
 }
+.note:hover .icons {
+    display: block;
+  }

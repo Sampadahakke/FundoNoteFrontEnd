@@ -74,6 +74,19 @@ export class NoteService {
     }
     return this.httpservice.deleteService(this.base + `Note/DeleteNote/${noteId}`, true, header)
   }
+
+  trashNote( noteId: any, data:any) {
+
+    console.log("token", this.token)
+
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json-patch+json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpservice.putService(this.base + `Note/IsTrash${noteId}`,data, true, header)
+  }
 }
 
 

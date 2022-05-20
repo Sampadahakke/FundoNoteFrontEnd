@@ -31,10 +31,11 @@ noteList:any;
   archiveMessage(event:any){
     this.GetAllNotes();
   }
+ 
+  trashMessage(event:any){
+    this.GetAllNotes();
+  }
   deleteMessage(event:any){
     this.GetAllNotes();
   }
-  // trashMessage(event:any){
-  //   this.GetAllNotes();
-  // }
 }
