@@ -32,7 +32,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ArchieveComponent } from './Component/archieve/archieve.component';
 import { TrashComponent } from './Component/trash/trash.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { DeleteComponent } from './Component/delete/delete.component';
+
 
 
 
@@ -54,7 +54,7 @@ import { DeleteComponent } from './Component/delete/delete.component';
     UpdateNotesComponent,
     ArchieveComponent,
     TrashComponent,
-    DeleteComponent,
+    
    
   ],
   imports: [
