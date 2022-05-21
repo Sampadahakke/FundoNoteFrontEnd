@@ -3,20 +3,17 @@
     margin-bottom: 20px;
     width: 260px;
     margin-left: 20px;
-    height: 100px;
+    height: 90px;
 }
 
-.icons{
-    margin-left: -10px;
-    width:20px;
-    margin-bottom: 10px;
-}
+// .icons{
+//     margin-left: -10px;
+//     width:20px;
+//     margin-bottom: 10px;
+// }
 .displayNote{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
 }
-.note:hover .icons {
-    display: block;
-  }

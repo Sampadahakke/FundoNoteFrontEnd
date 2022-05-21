@@ -15,6 +15,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 
 import{ FormsModule, ReactiveFormsModule} from '@angular/forms';
+import{ MatTooltipModule} from '@angular/material/tooltip';
+
 
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
@@ -32,6 +34,10 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ArchieveComponent } from './Component/archieve/archieve.component';
 import { TrashComponent } from './Component/trash/trash.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AuthguardService } from './Service/Guard/authguard.service';
+
+
+
 
 
 
@@ -59,6 +65,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
   ],
   imports: [
     BrowserModule,
+    MatTooltipModule,
     AppRoutingModule,
     MatFormFieldModule,
     MatInputModule,
@@ -78,7 +85,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatSnackBarModule
     
   ],
-  providers: [],
+  providers: [AuthguardService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

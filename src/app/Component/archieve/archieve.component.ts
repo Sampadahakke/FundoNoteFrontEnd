@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NoteService } from '../Service/NoteService/note.service';
+import { NoteService } from 'src/app/Service/NoteService/note-service.service';
 
 @Component({
   selector: 'app-archieve',
@@ -15,10 +15,10 @@ noteList:any;
   }
   GetAllNotes(){
     this.note.getNote().subscribe((response:any)=>{
-      console.log(response);
+      console.log(response.data);
       this.noteList=response.data;
       this.noteList = this.noteList.filter((object:any)=>{
-        return object.isArchive===true && object.isTrash===false
+        return object.isArchive===true 
       })
     }
   )}

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthenticationGuard } from './Authguard/authentication.guard';
+
 import { ArchieveComponent } from './Component/archieve/archieve.component';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './Component/forgot-password/forgot-password.component';
@@ -10,12 +12,14 @@ import { ResetPasswordComponent } from './Component/reset-password/reset-passwor
 import { TrashComponent } from './Component/trash/trash.component';
 
 
+
+
 const routes: Routes = [
   {path:'register',component:RegistrationComponent},
   {path:'login',component:LoginComponent},
   {path:'ForgotPassword',component:ForgotPasswordComponent},
   {path:'reset-password/:token',component:ResetPasswordComponent},
-  {path:'dashboard',component:DashboardComponent,
+  {path:'dashboard',component:DashboardComponent,canActivate:[AuthenticationGuard],
   children:[
     {path:'notes',component:GetAllNotesComponent},
     {path:'archieve',component: ArchieveComponent},

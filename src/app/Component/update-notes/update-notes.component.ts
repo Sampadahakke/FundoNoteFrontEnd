@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { NoteService } from '../Service/NoteService/note.service';
+
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { NoteService } from 'src/app/Service/NoteService/note-service.service';
 
 
 @Component({

@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { NoteService } from '../Service/NoteService/note.service';
+
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { NoteService } from 'src/app/Service/NoteService/note-service.service';
+
 @Component({
   selector: 'app-take-note',
   templateUrl: './take-note.component.html',

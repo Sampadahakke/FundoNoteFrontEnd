@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import{FormGroup,FormBuilder, Validators} from '@angular/forms';
-import { UserServiceService } from '../Service/UserService/user-service.service';
+
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { UserServiceService } from 'src/app/Service/UserService/user-service.service';
 
 @Component({
   selector: 'app-registration',

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { NoteService } from '../Service/NoteService/note.service';
+import { NoteService } from 'src/app/Service/NoteService/note-service.service';
+
 
 @Component({
   selector: 'app-trash',
@@ -20,7 +21,7 @@ noteList:any
       this.noteList=response.data;
       this.noteList.reverse();
       this.noteList = this.noteList.filter((object:any)=>{
-        return object.isArchive===false && object.isTrash===true
+        return object.isTrash===true
       })
     }
   )}
