@@ -89,8 +89,8 @@ export class NoteService {
   }
   
   changeColor( noteId: any,color:any) {
-
-    console.log("token", this.token)
+   
+    console.log("token", this.token,noteId)
 
     let header = {
       headers: new HttpHeaders({
@@ -98,7 +98,7 @@ export class NoteService {
         'Authorization': 'Bearer ' + this.token
       })
     }
-    return this.httpservice.putService(this.base + `Note/ChangeColorNote/${noteId}?${color}`,{}, true, header)
+    return this.httpservice.putService(this.base + `Note/ChangeColorNote/${noteId}?color=${color}`,{}, true, header)
   }
 }
 

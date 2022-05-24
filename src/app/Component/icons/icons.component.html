@@ -10,8 +10,8 @@
                         <div fxLayout="row wrap" style="padding-left: 8px;">
                                 <div *ngFor="let color of colorArray" class="bg-color">
                                         <button mat-icon-button mat-raised-button [matTooltip]="color.name"
-                                                [style.background]="color?.Colorcode"
-                                                (click)="changeColor(color?.Colorcode)"></button>
+                                                [style.background]="color.name"
+                                                (click)="changeColor(color?.name)"></button>
                                 </div>
                         </div>
                 </mat-menu>

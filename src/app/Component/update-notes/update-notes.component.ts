@@ -5,6 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteService } from 'src/app/Service/NoteService/note-service.service';
 
 
+
 @Component({
   selector: 'app-update-notes',
   templateUrl: './update-notes.component.html',
@@ -28,6 +29,7 @@ export class UpdateNotesComponent implements OnInit {
     console.log(this.data);
     this.title = this.data.title
     this.description = this.data.description
+    this.bgcolor=this.data.bgColor
   }
   onNoClick(): void {
    
@@ -35,7 +37,7 @@ export class UpdateNotesComponent implements OnInit {
     {
       title: this.title,
       description:this.description,
-      "bgColor": "string",
+      bgColor: "string",
       "isArchive": false,
       "isReminder": false,
       "isPin": false,

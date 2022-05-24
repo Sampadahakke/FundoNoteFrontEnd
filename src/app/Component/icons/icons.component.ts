@@ -115,8 +115,11 @@ export class IconsComponent implements OnInit {
     }
   
     changeColor(color:any){
+      console.log(color);
+
       this.note.changeColor(this.notedata.noteId,color).subscribe((response: any) => {
         console.log(response);
+        
         this.trashEvent.emit(response)
         this._snackBar.open('Color changed successfully..', '', {
             duration: 3000,
