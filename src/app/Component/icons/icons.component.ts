@@ -29,7 +29,8 @@ export class IconsComponent implements OnInit {
   isDisplayComponent=false;
   isArchieveComponent= false;
 
-
+  colorArray = [{Colorcode:"white", name:"White"},{Colorcode:"#f28b82", name:"Red"},{Colorcode:"#fbbc04", name:"Orange"},{Colorcode:"#fff475", name:"Yellow"},{Colorcode:"#ccff90", name:"Green"},{Colorcode:"#a7ffeb", name:"Teel"},
+  {Colorcode:"#cbf0f8", name:"Blue"},{Colorcode:"#aecbfa", name:"Dark-Blue"},{Colorcode:"#d7aefb", name:"Purple"},{Colorcode:"#fdcfe8", name:"Pink"},{Colorcode:"#e6c9a8", name:"Brown"},{Colorcode:"#e8eaed", name:"Gray"}];
   
 
   constructor(private note: NoteService,private _snackBar: MatSnackBar, public dialog: MatDialog,private route: ActivatedRoute) { }
@@ -51,7 +52,7 @@ export class IconsComponent implements OnInit {
     }
     
   }
-  archieve(note:any) {
+  archieve() {
     this.isArchive=false;
     this.note.archieveNote(this.notedata.noteId).subscribe((response: any) => {
       console.log(response);
@@ -113,12 +114,23 @@ export class IconsComponent implements OnInit {
       })
     }
   
-    // changeColor(newcolor: any) {
-    //   this.notesService.changeColor(newcolor, this.noteObj.noteId).subscribe((response: any) => {
-    //     console.log("Note Background Color Changed Successfully", response);
-    //     this.changeNoteEvent.emit(response);
-    //   })
-    // }
+    changeColor(color:any){
+      this.note.changeColor(this.notedata.noteId,color).subscribe((response: any) => {
+        console.log(response);
+        this.trashEvent.emit(response)
+        this._snackBar.open('Color changed successfully..', '', {
+            duration: 3000,
+            verticalPosition: 'bottom'
+          })
+       }, error=>this._snackBar.open('failed to change color', '', {
+        duration: 2000,
+        verticalPosition: 'bottom'
+  
+      })
+      )
+    }
+
+    
   }
 
 

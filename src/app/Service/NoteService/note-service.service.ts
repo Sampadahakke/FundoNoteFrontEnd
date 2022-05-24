@@ -87,5 +87,19 @@ export class NoteService {
     }
     return this.httpservice.putService(this.base + `Note/IsTrash${noteId}`,data, true, header)
   }
+  
+  changeColor( noteId: any,color:any) {
+
+    console.log("token", this.token)
+
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json-patch+json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpservice.putService(this.base + `Note/ChangeColorNote/${noteId}?${color}`,{}, true, header)
+  }
 }
+
 
