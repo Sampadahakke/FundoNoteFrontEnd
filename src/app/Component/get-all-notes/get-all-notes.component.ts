@@ -39,4 +39,9 @@ noteList:any;
   deleteMessage(event:any){
     this.GetAllNotes();
   }
+  DisplayMessage(event:any){
+    this.GetAllNotes();
+  }
+
+  
 }

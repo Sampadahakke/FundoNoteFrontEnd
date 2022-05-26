@@ -21,14 +21,27 @@
 
         <div>
             <img class="SearchImg" src="../../../assets/search_FILL0_wght400_GRAD0_opsz48 (1).svg">
-            <input class="searchtext" type="text" placeholder="Search" style="height: 30px; width:800px;">
+            <input class="searchtext" type="text"  placeholder="Search" style="height: 30px; width:800px;" 
+                (keyup)="keyUpFunction($event)"> 
         </div>
 
         <mat-nav-list class="mat-nav-list" fxLayout="row">
             <button mat-icon-button class="list"> <img src="../../../assets/refresh_FILL0_wght400_GRAD0_opsz48.svg"
                     width="30px" height="30px"></button>
-            <button mat-icon-button class="list"> <img src="../../../assets/list_view.svg" width="30px"
-                    height="30px"></button>
+                    <div>
+                        <button mat-icon-button class="list"> <img src="../../../assets/list_view.svg" width="30px"
+                            height="30px"></button>
+                            <!-- <button mat-icon-button class="list"> <img src="../../../assets/list_view.svg" width="30px"
+                                height="30px" class="btn btn-white" type="button"(click)="onDisplayModeChange(2)"
+                                [ngClass]="{'btn-primary active': displayMode === 2}"> <i class="fa fa-th"></i></button> -->
+                    </div>
+                    <!-- <div class="row" *ngIf="displayMode === 1">
+                        <p *ngFor='let product of recievedNoteList' "></p>
+                      </div>
+                      <div class="row" *ngIf="displayMode === 2">
+                        <p *ngFor='let product of recievedNoteList' ></p>
+                      </div> -->
+                   
             <button mat-icon-button class="setting"> <img src="../../../assets/settings_FILL0_wght400_GRAD0_opsz48.svg"
                     width="30px" height="30px"></button>
             <button mat-icon-button class="app"> <img src="../../../assets/apps_FILL0_wght400_GRAD0_opsz48.png"
@@ -39,10 +52,10 @@
 
     </mat-toolbar>
 
-    <mat-sidenav-container style="border: 1px solid red; height:200px" class="example-sidenav-container"
+    <mat-sidenav-container style="border: 1px solid red; height:200px; background-color: white;" class="example-sidenav-container"
         [style.marginTop.px]="mobileQuery.matches ? 100 : 0">
-        <mat-sidenav style="width:250px;"  #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
-            fixedTopGap="100">
+        <mat-sidenav style="width:250px;" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+            [fixedInViewport]="mobileQuery.matches" fixedTopGap="100">
             <mat-nav-list class="mat-nav-list">
                 <a mat-list-item class="Notes" routerLink="notes">
                     <img class="note" src="../../../assets/notes.svg">
@@ -60,8 +73,8 @@
                     <img class="Edit" src="../../../assets/edit_FILL0_wght400_GRAD0_opsz48.svg">
                     Edit labels
                 </a>
-                <a mat-list-item class="Archive" routerLink="archieve" >
-                    <img class="archive" src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg" >
+                <a mat-list-item class="Archive" routerLink="archieve">
+                    <img class="archive" src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg">
                     Archive
                 </a>
                 <a mat-list-item class="Bin" routerLink="trash">
@@ -77,3 +90,31 @@
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>
+<!-- <div id="view">
+    <input type="radio" id="left" name="align" value="1" (click)="changeDisplay(1)">
+    <label for="left">grid view</label>
+    <input type="radio" id="right" name="align" value="2" (click)="changeDisplay(2)">
+    <label for="right">list view</label>
+</div> -->
+
+<!-- <div id="view" class="e-btn-group">
+        <input type="radio" id="left" name="align" value="1" (click)="changeDisplay(1)" />
+        <label class="e-btn" for="left">Grid View</label>
+        <input type="radio" id="right" name="align" value="2" (click)="changeDisplay(2)" />
+        <label class="e-btn" for="right">List View</label>
+      </div>
+ 
+  <div class="row" *ngIf="display === 1;else list_content">
+        <ejs-grid [dataSource]='data' height='350'>
+              <e-columns>
+                    <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
+                    <e-column field='CustomerName' headerText='Customer Name' width='150'></e-column>
+                    <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign='Right'>
+                        </e-column>
+                  </e-columns>
+            </ejs-grid>
+      </div>
+  <ng-template #list_content>
+        <ejs-listview id='sample-list-flat' [dataSource]='listData'></ejs-listview>
+      </ng-template> -->
+ 

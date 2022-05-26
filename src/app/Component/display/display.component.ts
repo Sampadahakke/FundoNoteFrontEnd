@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DataService } from 'src/app/Service/dataService/data.service';
 import { UpdateNotesComponent } from '../update-notes/update-notes.component';
 
 
@@ -17,20 +18,26 @@ export class DisplayComponent implements OnInit {
 @Output() archiveEvent = new EventEmitter<string>();
 @Output() trashEvent = new EventEmitter<string>();
 @Output() deleteEvent = new EventEmitter<string>();
-
+filteredString:any;
+titleSearch: string='';
 
 // @Output() trashEvent = new EventEmitter<string>();
+@Output() DisplayEvent = new EventEmitter<string>();
 
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,private data:DataService) { }
 
   ngOnInit(): void {
+    this.data.currentMessage.subscribe(message  => {
+      console.log(message)
+      this.titleSearch=message
+    } )
   }
   
   openDialog(note:any): void {
     const dialogRef = this.dialog.open(UpdateNotesComponent , {
       width: '450px',
-      height:'250px',
+      height:'200px',
       data:note,
     });
 
@@ -50,6 +57,16 @@ export class DisplayComponent implements OnInit {
   deleteMessage(event:any){
     this.deleteEvent.emit("Hello")
   }
+  searchText: string='';
+
+  onSearchTextEntered(searchValue:string){
+    this.searchText=searchValue;
+    // console.log( this.searchText);
+  }
+  DisplayMessage(event:any){
+    this.DisplayEvent.emit("Hello")
+  }
+ 
 }
 
 

@@ -57,11 +57,12 @@ export class IconsComponent implements OnInit {
     this.note.archieveNote(this.notedata.noteId).subscribe((response: any) => {
       console.log(response);
       this.archiveEvent.emit(response)
-      if(response==true){
+      if(this.isArchieveComponent==false){
         this._snackBar.open('Note Archived', '', {
           duration: 3000,
           verticalPosition: 'bottom'
         })
+        
       }
       
       else
@@ -75,25 +76,25 @@ export class IconsComponent implements OnInit {
     
   }
 
-  Unarchieve() {
-    let data = {
-      isArchived: false,
-    }
-    this.note.archieveNote(data).subscribe((res:any)=>{
-      console.log("unarchive a note",res);
-      this.archiveEvent.emit(res)
-    })
-}
+  
 
   trash(note:any) {
     this.isTrash = !note.isTrash;
     this.note.trashNote(this.notedata.noteId,this.data).subscribe((response: any) => {
       console.log(response);
       this.trashEvent.emit(response)
-      this._snackBar.open('Note trashed successfully..', '', {
+      if(this.isTrashComponent==false){
+        this._snackBar.open('Note trashed successfully..', '', {
           duration: 3000,
           verticalPosition: 'bottom'
         })
+      }
+     else if(this.isTrashComponent==true){
+      this._snackBar.open('Note restored successfully..', '', {
+        duration: 3000,
+        verticalPosition: 'bottom'
+      })
+     }
      }, error=>this._snackBar.open('failed to trash', '', {
       duration: 2000,
       verticalPosition: 'bottom'
@@ -111,7 +112,7 @@ export class IconsComponent implements OnInit {
           duration: 3000,
           verticalPosition: 'bottom'
         })
-      })
+      })   
     }
   
     changeColor(color:any){

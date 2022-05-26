@@ -1,19 +1,23 @@
-
 ><mat-card class="takeNote">
     <div *ngIf="isShow" fxLayout="row" fxLayoutAlign="space-between center">
-        <mat-card-title > <input class="Title"  matInput style="width: 300px; height: 20px;" placeholder="Title" [(ngModel)]="Title"> </mat-card-title>
-        <button mat-icon-button > <img style="width: 25px; height:25px;" src="../../../assets/pin.svg" width="px"
-            height="30px"></button>
+        <mat-card-title> <input class="Title" matInput style="width: 300px; height: 20px;" placeholder="Title"
+                [(ngModel)]="Title"> </mat-card-title>
+                <button class="pin"  mat-icon-button matTooltip="Pin"> <img style="width: 25px; height:25px;" src="../../../assets/pin.svg" ></button>
     </div>
     <div *ngIf="!isShow || isShow" (click)="Show()">
-        <input (Click)="Show()" class="TakeNote" matInput style="width: 300px; height: 20px;" placeholder="Take a note..." [(ngModel)]="Description">
+        <input (Click)="Show()" class="TakeNote" matInput style="width: 300px; height: 20px;"
+            placeholder="Take a note..." [(ngModel)]="Description">
     </div>
     <div *ngIf="isShow" fxLayout="row" fxLayoutAlign="space-between center">
         <app-icons></app-icons>
         <button mat-button (click)="close()">Close</button>
     </div>
+    
+    <div *ngIf="!isShow " class="icon">
+        <button mat-icon-button matTooltip="New list"> <img style="width: 20px; height:20px;"
+            src="../../../assets/Icons/check_box_black_24dp.svg" ></button>
+        <button mat-icon-button matTooltip="New note with drawing"> <img style="width: 20px; height:20px;"
+                src="../../../assets/Icons/brush_black_24dp.svg"></button>
+        <button mat-icon-button matTooltip="New note with image"> <img style="width: 20x; height:20px;" src="../../../assets/Icons/Add image.svg"></button>
+    </div>
 </mat-card>
-
- 
-
-

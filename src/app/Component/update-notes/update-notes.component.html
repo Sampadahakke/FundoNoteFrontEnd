@@ -8,13 +8,13 @@
         </div>
   
 </div> -->
-<div class="note" [style.background]="data.bgColor">
+<div class="note" [style.background]="data.bgColor" >
 
     <div fxLayout="row" fxLayoutAlign="space-between center">
       <input class="mat-title" placeholder="Title" matInput mat-dialog-title [(ngModel)]="title"  >
     </div>
   
-    <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayoutAlign="space-between center" style="overflow: hidden;">
         <input class="mat-title" placeholder="Description" matInput mat-dialog-title  [(ngModel)]="description">
     </div>
     <app-icons></app-icons>

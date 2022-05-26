@@ -4,6 +4,7 @@
     width: 260px;
     margin-left: 20px;
     height: 90px;
+    
 }
 
 // .icons{
@@ -16,4 +17,13 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    
+      
+}
+::ng-deep.mat-dialog-container {
+    padding: 0px !important;
+    margin-top:-50px;
+}
+.a{
+    height: fit-content;
 }

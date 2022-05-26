@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,6 +36,9 @@ import { ArchieveComponent } from './Component/archieve/archieve.component';
 import { TrashComponent } from './Component/trash/trash.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AuthguardService } from './Service/Guard/authguard.service';
+import { FilterPipe } from './Pipe/filter.pipe';
+
+
 
 
 
@@ -60,6 +64,7 @@ import { AuthguardService } from './Service/Guard/authguard.service';
     UpdateNotesComponent,
     ArchieveComponent,
     TrashComponent,
+    FilterPipe,
     
    
   ],
@@ -82,7 +87,7 @@ import { AuthguardService } from './Service/Guard/authguard.service';
     MatIconModule,
     MatDialogModule,
     MatMenuModule,
-    MatSnackBarModule
+    MatSnackBarModule,MatGridListModule
     
   ],
   providers: [AuthguardService ],

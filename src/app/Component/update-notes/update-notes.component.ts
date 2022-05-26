@@ -37,7 +37,7 @@ export class UpdateNotesComponent implements OnInit {
     {
       title: this.title,
       description:this.description,
-      bgColor: "string",
+      bgColor: this.bgcolor,
       "isArchive": false,
       "isReminder": false,
       "isPin": false,

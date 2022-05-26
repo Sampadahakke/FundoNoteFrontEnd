@@ -1,22 +1,17 @@
-<!-- <mat-card>
-    <div style="width: 30px; height:30px" *ngFor="let note of recievedNoteList">
-        <p>{{note.title}}</p>
-        <p>{{note.description}}</p>
-        <p>{{note.data}}</p>
-    </div>
-    
-</mat-card> -->
-<div class="displayNote " >
-    <div *ngFor="let note of recievedNoteList">
+
+<div class="displayNote " style="height: 200px;">
+    <!-- <div>
+        <input type="text" class="form-control" [(ngModel)]="filteredString">
+    </div> -->
+    <div  class="a"  *ngFor="let note of recievedNoteList | filter: titleSearch ">
         <mat-card class="note"  [style.background]="note.bgColor">
             <div class="Title">
                 <p (click)="openDialog(note)">{{note.title}}</p>
                 <p (click)="openDialog(note)">{{note.description}}</p>
                 <p>{{note.token}}</p>
-    
             </div>
             <div >
-                <app-icons class="icons" [notedata]="note" (deleteEvent)="deleteMessage($event)" (archiveEvent)="archiveMessage($event)" (trashEvent)="trashMessage($event)"></app-icons>
+                <app-icons class="icons" [notedata]="note" (deleteEvent)="deleteMessage($event)"(DisplayEvent)="DisplayMessage($event)" (archiveEvent)="archiveMessage($event)" (trashEvent)="trashMessage($event)"></app-icons>
             </div>
          
         </mat-card>

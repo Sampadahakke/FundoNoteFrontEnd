@@ -6,3 +6,9 @@
 }
 input {border:0;outline:0;}
 input:focus {outline:none!important;}
+input{
+  background-color: transparent;
+}
+::-webkit-scrollbar{
+  display: none;
+}
