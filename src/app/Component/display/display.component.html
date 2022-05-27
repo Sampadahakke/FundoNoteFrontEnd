@@ -11,7 +11,7 @@
                 <p>{{note.token}}</p>
             </div>
             <div >
-                <app-icons class="icons" [notedata]="note" (deleteEvent)="deleteMessage($event)"(DisplayEvent)="DisplayMessage($event)" (archiveEvent)="archiveMessage($event)" (trashEvent)="trashMessage($event)"></app-icons>
+                <app-icons class="icons" [notedata]="note" (updateEvent)="updateMessage($event)"></app-icons>
             </div>
          
         </mat-card>

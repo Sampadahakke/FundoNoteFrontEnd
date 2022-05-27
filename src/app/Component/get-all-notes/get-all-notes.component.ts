@@ -26,20 +26,8 @@ noteList:any;
   receiveMessage(event:any){
     this.GetAllNotes();
   }
-  updateMessage(event:any){
-    this.GetAllNotes();
-  }
-  archiveMessage(event:any){
-    this.GetAllNotes();
-  }
- 
-  trashMessage(event:any){
-    this.GetAllNotes();
-  }
-  deleteMessage(event:any){
-    this.GetAllNotes();
-  }
-  DisplayMessage(event:any){
+  
+  displayMessage(event:any){
     this.GetAllNotes();
   }
 

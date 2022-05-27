@@ -22,7 +22,7 @@ noteList:any;
       })
     }
   )}
-  archiveMessage(event:any){
+  displayMessage(event:any){
     this.GetAllNotes();
   }
  

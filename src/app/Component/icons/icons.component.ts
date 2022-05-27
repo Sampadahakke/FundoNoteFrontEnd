@@ -21,9 +21,8 @@ export class IconsComponent implements OnInit {
   isTrash:any;
  
   @Input() notedata: any;
-  @Output() archiveEvent = new EventEmitter<string>();
-  @Output() trashEvent = new EventEmitter<string>();
-  @Output() deleteEvent = new EventEmitter<string>();
+  @Output() updateEvent = new EventEmitter<any>();
+  
   
   isTrashComponent=false;
   isDisplayComponent=false;
@@ -53,10 +52,9 @@ export class IconsComponent implements OnInit {
     
   }
   archieve() {
-    this.isArchive=false;
     this.note.archieveNote(this.notedata.noteId).subscribe((response: any) => {
       console.log(response);
-      this.archiveEvent.emit(response)
+      this.updateEvent.emit(response)
       if(this.isArchieveComponent==false){
         this._snackBar.open('Note Archived', '', {
           duration: 3000,
@@ -82,7 +80,7 @@ export class IconsComponent implements OnInit {
     this.isTrash = !note.isTrash;
     this.note.trashNote(this.notedata.noteId,this.data).subscribe((response: any) => {
       console.log(response);
-      this.trashEvent.emit(response)
+      this.updateEvent.emit(response)
       if(this.isTrashComponent==false){
         this._snackBar.open('Note trashed successfully..', '', {
           duration: 3000,
@@ -106,7 +104,7 @@ export class IconsComponent implements OnInit {
     delete() {
       this.note.deleteNote(this.notedata.noteId).subscribe((response: any) => {
         console.log("Note Deleted Successfully", response);
-        this.deleteEvent.emit(response);
+        this.updateEvent.emit(response);
   
         this._snackBar.open('Note Deleted Successfully', '', {
           duration: 3000,
@@ -121,7 +119,7 @@ export class IconsComponent implements OnInit {
       this.note.changeColor(this.notedata.noteId,color).subscribe((response: any) => {
         console.log(response);
         
-        this.trashEvent.emit(response)
+        this.updateEvent.emit(response)
         this._snackBar.open('Color changed successfully..', '', {
             duration: 3000,
             verticalPosition: 'bottom'

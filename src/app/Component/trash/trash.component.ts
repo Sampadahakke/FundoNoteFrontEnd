@@ -26,7 +26,7 @@ noteList:any
     }
   )}
   
-  trashMessage(event:any){
+  displayMessage(event:any){
     this.GetAllNotes();
   }
   deleteMessage(event:any){

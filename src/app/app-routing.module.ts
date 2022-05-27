@@ -21,14 +21,13 @@ const routes: Routes = [
   {path:'reset-password/:token',component:ResetPasswordComponent},
   {path:'dashboard',component:DashboardComponent,canActivate:[AuthenticationGuard],
   children:[
+    {path:'', redirectTo:'/dashboard/notes', pathMatch:'full' },
     {path:'notes',component:GetAllNotesComponent},
     {path:'archieve',component: ArchieveComponent},
     {path:'trash',component: TrashComponent},
-
-
-
-
-  ]}
+  ]},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  
 ];
 
 
