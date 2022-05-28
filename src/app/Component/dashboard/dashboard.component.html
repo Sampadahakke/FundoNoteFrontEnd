@@ -14,8 +14,7 @@
 
         <div>
             <img class="SearchImg" src="../../../assets/search_FILL0_wght400_GRAD0_opsz48 (1).svg">
-            <input  class="searchtext" type="text"  placeholder="Search" style="height: 30px; width:800px; background-color:transparent;" 
-                (keyup)="keyUpFunction($event)"> 
+            <input  class="searchtext" type="text"  placeholder="Search" (keyup)="keyUpFunction($event)"> 
         </div>
 
         <mat-nav-list class="mat-nav-list" fxLayout="row" >
@@ -39,7 +38,7 @@
                     width="30px" height="30px"></button>
             <button mat-icon-button class="app"> <img src="../../../assets/apps_FILL0_wght400_GRAD0_opsz48.png"
                     width="30px" height="30px"></button>
-            <button mat-icon-button class="person"> <img src="../../../assets/person_FILL0_wght400_GRAD0_opsz48.svg"
+            <button mat-icon-button class="person" (click)="logout()"> <img src="../../../assets/person_FILL0_wght400_GRAD0_opsz48.svg"
                     width="30px" height="30px"></button>
         </mat-nav-list>
 
@@ -47,11 +46,11 @@
 
     <mat-sidenav-container style="border: 1px solid red; height:200px; background-color: white;" class="example-sidenav-container"
         [style.marginTop.px]="mobileQuery.matches ? 100 : 0">
-        <mat-sidenav style="width:250px;" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+        <mat-sidenav style="width:300px;" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
             [fixedInViewport]="mobileQuery.matches" fixedTopGap="100">
             <mat-nav-list class="mat-nav-list">
                 <a mat-list-item class="Notes" routerLink="notes">
-                    <img class="note" src="../../../assets/notes.svg">
+                    <img class="note" src="../../../assets/Icons/lightbulb_black_24dp (1).svg">
                     Notes
                 </a>
                 <a mat-list-item class="Reminders">

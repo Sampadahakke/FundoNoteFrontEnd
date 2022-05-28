@@ -59,10 +59,7 @@ export class IconsComponent implements OnInit {
         this._snackBar.open('Note Archived', '', {
           duration: 3000,
           verticalPosition: 'bottom'
-        })
-        
-      }
-      
+        })}
       else
        {
         this._snackBar.open('Note Unarchived', '', {
@@ -118,6 +115,9 @@ export class IconsComponent implements OnInit {
 
       this.note.changeColor(this.notedata.noteId,color).subscribe((response: any) => {
         console.log(response);
+        
+
+        
         
         this.updateEvent.emit(response)
         this._snackBar.open('Color changed successfully..', '', {

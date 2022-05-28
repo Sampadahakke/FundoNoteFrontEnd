@@ -1,20 +1,21 @@
-
-<div class="displayNote " style="height: 200px;">
-    <!-- <div>
-        <input type="text" class="form-control" [(ngModel)]="filteredString">
-    </div> -->
-    <div  class="a"  *ngFor="let note of recievedNoteList | filter: titleSearch ">
-        <mat-card class="note"  [style.background]="note.bgColor">
-            <div class="Title">
+<div class="displayNote " >
+    <div class="a" *ngFor="let note of recievedNoteList | filter: titleSearch ">
+        <mat-card class="note" [style.background]="note.bgColor">
+            <div class="Title" fxLayout="row" fxLayoutAlign="space-between center">
                 <p (click)="openDialog(note)">{{note.title}}</p>
-                <p (click)="openDialog(note)">{{note.description}}</p>
-                <p>{{note.token}}</p>
+                <button  class="pin" mat-icon-button matTooltip="Pin">
+                    <img src="../../../assets/Icons/pin.svg" width="20px" height="20px">
+                </button>
+               
             </div>
-            <div >
+            <div class="Note">
+                <p (click)="openDialog(note)">{{note.description}}</p>
+            </div>
+            <div>
                 <app-icons class="icons" [notedata]="note" (updateEvent)="updateMessage($event)"></app-icons>
             </div>
-         
+
         </mat-card>
     </div>
-   
+
 </div>

@@ -2,6 +2,8 @@ import { ChangeDetectorRef, Component, OnDestroy, EventEmitter, Output } from '@
 import {MediaMatcher} from '@angular/cdk/layout';
 import { ThisReceiver } from '@angular/compiler';
 import { DataService } from 'src/app/Service/dataService/data.service';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,6 +11,7 @@ import { DataService } from 'src/app/Service/dataService/data.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnDestroy {
+  
   // recievedNoteList:any
    mobileQuery: MediaQueryList;
 
@@ -28,7 +31,7 @@ export class DashboardComponent implements OnDestroy {
   displayMode!: number;
   // display: number;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private data:DataService) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private data:DataService ,private router:Router,private _snackBar: MatSnackBar) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -46,13 +49,17 @@ export class DashboardComponent implements OnDestroy {
     console.log("event",event.target.value)
     this.data.changeMessage(event.target.value)
   }
-
-// changeDisplay(mode: number): void {
-//     this.display = mode;
-//   }
-//  onDisplayModeChange(mode: number): void {
-//   this.displayMode = mode;
-}
+ 
+  logout(){
+    localStorage.removeItem('token');
+    this.router.navigateByUrl("/login");
+    console.log("successfully logout...");
+     this._snackBar.open('successfully logout...','..', {
+        duration: 3000,
+        verticalPosition: 'bottom'
+      })
+    }
+  }
 
 
 

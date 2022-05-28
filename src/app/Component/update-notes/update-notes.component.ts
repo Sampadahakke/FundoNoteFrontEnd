@@ -14,56 +14,63 @@ import { NoteService } from 'src/app/Service/NoteService/note-service.service';
 export class UpdateNotesComponent implements OnInit {
   title: any
   description: any
-  bgcolor: any
+  bgColor: any
   image: any
   isArchive: any
   isPin: any
   isTrash: any
   noteId: any
-@Output() updateEvent = new EventEmitter<string>();
+  
+  
 
-  constructor( private _snackBar: MatSnackBar,private note:NoteService,public dialogRef: MatDialogRef<UpdateNotesComponent>,@Inject(MAT_DIALOG_DATA) public data: any,
-  ) { }
+  constructor(private _snackBar: MatSnackBar, private note: NoteService, public dialogRef: MatDialogRef<UpdateNotesComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
+  ) {}
 
   ngOnInit(): void {
     console.log(this.data);
+    console.log(this.data.bgColor)
     this.title = this.data.title
     this.description = this.data.description
-    this.bgcolor=this.data.bgColor
+    this.bgColor=this.data.bgColor
+    
   }
   onNoClick(): void {
-   
-    let data=
+
+    let data =
     {
+      noteId:this.noteId,
       title: this.title,
-      description:this.description,
-      bgColor: this.bgcolor,
+      description: this.description,
+      bgColor: this.bgColor,
       "isArchive": false,
       "isReminder": false,
       "isPin": false,
       "isTrash": false
     }
-    this.note.updateNote(data,this.data.noteId).subscribe((res:any)=>
-    {
-      console.log("update response=",res);
+    this.note.updateNote(data, this.data.noteId).subscribe((res: any) => {
+      console.log("update response=", res);
+      console.log(this.data.noteId);
       this.dialogRef.close(res);
+     
       this._snackBar.open('Note updated successfully', '', {
         duration: 3000,
         verticalPosition: 'bottom'
       })
-    },error=>{
+    }, error => {
       this._snackBar.open('Failed to update', '', {
-      duration: 2000,
-      verticalPosition: 'bottom'
+        duration: 2000,
+        verticalPosition: 'bottom'
 
       });
     }
     )
-   
-  }
-  recieveMessage(event:any){
-    this.onNoClick()
 
   }
+  iconRefresh(event:any){
+    
+      if(event.data !== (null || undefined)){
+        console.log(event.data)
+      this.bgColor = event.data.bgColor} 
 }
 
+}
